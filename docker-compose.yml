@@ -1,0 +1,36 @@
+version: '3'
+services:
+  fastapi:
+    depends_on:
+      - pdadmin
+      - db
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app:rw
+
+  pdadmin:
+    image: dpage/pgadmin4
+    depends_on:
+      - db
+    env_file:
+      - .env
+    ports:
+    - "5050:5050"
+
+  db:
+    image: postgres:12
+    # volumes:
+    #     - app-db-data:/var/lib/postgresql/data/pgdata
+    env_file:
+      - .env
+    # environment:
+    #     - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+
+  # volumes:
+  #   app-db-data:
