@@ -23,10 +23,10 @@ class Env(BaseSettings):
         )
 
     def to_env_file_str(self) -> str:
-        values = []
+        lines = []
         for field_name in self.__fields__.keys():
             value = getattr(self, field_name)
-            values.append(
+            lines.append(
                 f"{field_name}={value}",
             )
-        return "\n".join(values)
+        return "\n".join(lines)

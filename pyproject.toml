@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "simple_fastapi"
+name = "fastapi_docker_template"
 version = "0.1.0"
 description = ""
 authors = ["yourname <yourname@example.com>"]

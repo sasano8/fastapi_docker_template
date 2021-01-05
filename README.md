@@ -158,7 +158,33 @@ To login, run this command in a terminal:
 Dockerfileに組み込んでしまうのも気が引ける。
 
 
-# TODO: 1. __pycache__がdeveloper権限で作成されていること
+# todo highlight
+コード上のコメントに特定のタグを指定することで、TODOとして一覧表示することができます。
+
+``` Python
+# TODO: (サンプル) XXXの処理を追加する
+def func():
+    raise NotImplementedError()
+```
+
+## 標準タグ
+標準で利用可能なタグは次のとおりです。
+
+- TODO: 処理を追加すべき箇所
+- FIXME: 修正すべき箇所
+- HACK: リファクタリングすべき箇所
+
+## よくカスタマイズで利用されるタグ
+必要に応じてカスタムタグを追加もできます。
+
+- OPTIMEZE: 最適化をすべき箇所
+- REVIEW: レビューすべき箇所
+
+
+# 環境テスト
+環境上の権限や挙動について、次のことを検証しています。
+
+1. __pycache__がdeveloper権限で作成されていること
+2. 定義 (F12) へ移動ができること
 # TODO: 2. poetry add時にグローバル環境にインストールされること　→　仮想環境を作成せず、デフォルトの検索パッケージ用フォルダに格納されるのでOK
 # TODO: 3. jupyter notebookが動くこと
-# TODO: 4. 定義へ移動ができること
