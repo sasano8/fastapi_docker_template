@@ -23,20 +23,14 @@ def start() -> None:
 
 
 @server.command()
-def start_debug() -> None:
-    """VSCodeとデバッグ連携可能なアプリケーションサーバを起動します"""
+def start_debug_for_vscode() -> None:
+    """VSCodeのデバッガーをアタッチ可能なアプリケーションサーバを起動します"""
+    import debugpy
     import uvicorn
 
-    editor = "VSCODE"
-
-    if editor == "VSCODE":
-        import debugpy
-
-        # デバッガーがアタッチされるまで待機する
-        debugpy.listen(("0.0.0.0", 5678))
-        debugpy.wait_for_client()
-    else:
-        raise Exception()
+    # デバッガーがアタッチされるまで待機する
+    debugpy.listen(("0.0.0.0", 5678))
+    debugpy.wait_for_client()
 
     uvicorn.run("src.api:app", host="0.0.0.0", port=8080, reload=True)
 

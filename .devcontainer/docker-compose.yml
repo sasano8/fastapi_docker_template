@@ -37,5 +37,5 @@ services:
 
     # Overrides default command so things don't shut down after the process ends.
     # command: /bin/sh -c "while sleep 1000; do :; done"
-    command: python3 -m cli server start-debug
+    command: python3 -m src server start-debug-for-vscode
 

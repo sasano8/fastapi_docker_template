@@ -1,7 +1,7 @@
 # FastAPI + Docker Template
-FastAPI(Python) + DockerプロジェクトをVSCodeで開発するための雛形です。
+It's a template for backend of FastAPI(Python) on Docker.
 
-# 何ができる？
+# Features
 - Dockerコンテナを用いた再現性が高い開発環境を提供します
 - VSCodeプラグインを管理し、VSCodeのエディタ環境まで再現します
 - リモート上でデバッグ（ブレークポイント）できます

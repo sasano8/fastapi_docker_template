@@ -16,11 +16,12 @@ EXPOSE 8080
 # development
 EXPOSE 5678
 
+RUN apt-get update && apt-get install -y sudo vim zsh
+
 USER developer
 RUN poetry config virtualenvs.create false && poetry config virtualenvs.in-project false
 
 # custom
-RUN apt-get update && apt-get install -y sudo vim zsh
 RUN echo "alias ll='ls -l'" >> ~/.bashrc
 RUN echo "alias ll='ls -l'" >> ~/.zshrc
 
