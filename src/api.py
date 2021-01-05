@@ -30,3 +30,8 @@ def create_user(
     db.commit()
     db.refresh(obj)
     return obj
+
+
+# TODO: Implement your application!
+def update_user() -> None:
+    raise NotImplementedError()
